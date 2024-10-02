@@ -43,6 +43,7 @@ class Numbers {
     return this.data.filter((number) => number > target).length;
   }
 }
+// ---------------------I was having fun here----------------------------
 let defaultString = "";
 let randNum1 = Math.floor(Math.random() * 10) + 1; // creates random number 1-10
 let randNum2 = Math.floor(Math.random() * 10); //creates random number 0-9
@@ -51,7 +52,7 @@ for (let i = 0; i < randNum1; i++) {
   defaultString+= (Math.floor(Math.random() * 10)) + ",";
 }
 defaultString+= Math.floor(Math.random() * 10);
-
+//-----------------------------------------------------------------------
 //Prompt the user for a list of integers separated by commas
 const str = prompt("enter some numbers, like this", defaultString);
 
@@ -63,6 +64,6 @@ console.log(n1.odds()); //returns odd numbers
 console.log(n1.evens()); //returns even numbers
 console.log(n1.sum()); //returns sum of numbers
 console.log(n1.product()); //returns product of numbers
-console.log("the following values are measured against: " + randNum1)
+console.log("the following values use " + randNum1 + " as a target.") // added for clarification------------
 console.log(n1.greaterThan(randNum1)); //returns numbers greater than another number
 console.log(n1.howMany(randNum1)); //return the count of a specific number
