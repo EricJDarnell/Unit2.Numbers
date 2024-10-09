@@ -15,8 +15,7 @@ class Numbers {
   }
   printNumbers() {
     //print the numbers in data
-    this.data.forEach((number) => console.log(number)); // prints individually
-    console.log(this.data); // prints array
+    this.data.forEach((number, idx) => console.log(idx, number)); // prints individually
   }
   odds() {
     //return the odd numbers in data
@@ -29,10 +28,16 @@ class Numbers {
   sum() {
     //return the sum of the numbers
     return this.data.reduce((accumulator, number) => accumulator + number, 0);
+    let accumulator = 0;
+
+    for (let i=0; i < this.data.length; i++){
+      accumulator = accumulator + this.data[i];
+    } 
+    return accumulator;
   }
   product() {
     //return the product of the numbers
-    return this.data.reduce((accumulator, number) => accumulator * number, 1);
+    return this.data.reduce((accumulator, number) => accumulator * number, 1); // initial value set to 1 for product!!
   }
   greaterThan(target) {
     //return the numbers greater than the target
@@ -40,7 +45,7 @@ class Numbers {
   }
   howMany(target) {
     //return the count of a given number
-    return this.data.filter((number) => number > target).length;
+    return this.data.filter((number) => number === target).length;
   }
 }
 // ---------------------I was having fun here----------------------------
